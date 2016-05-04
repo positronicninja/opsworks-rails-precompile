@@ -1,6 +1,7 @@
 # Recipes
 
 `opsworks-rails-precompile::default`
+`opsworks-rails-precompile::symlink`
 
 # Author
 
