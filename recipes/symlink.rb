@@ -1,5 +1,6 @@
+release_path = new_resource.release_path
+
 node[:deploy].each do |application, deploy|
-  release_path = deploy[:release_path]
   shared_path = deploy[:deploy_to] + '/shared'
 
   # create shared directory for assets, if it doesn't exist
