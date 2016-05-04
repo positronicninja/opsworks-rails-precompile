@@ -9,7 +9,7 @@ node[:deploy].each do |application, deploy|
     recursive true
   end
 
-  Chef::Log.info("Deploy Object: #{deploy}")
+  Chef::Log.info("Deploy Object: #{deploy.to_s}")
   Chef::Log.info("Symlinking #{release_path}/public/assets to #{shared_path}/shared/assets")
 
   # symlink current deploy's asset folder to shared assets each deploy
