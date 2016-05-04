@@ -1,6 +1,5 @@
-release_path = new_resource.release_path
-
 node[:deploy].each do |application, deploy|
+  release_path = deploy[:release_path]
   shared_path = deploy[:deploy_to] + '/shared'
 
   # create shared directory for assets, if it doesn't exist
@@ -10,6 +9,7 @@ node[:deploy].each do |application, deploy|
     recursive true
   end
 
+  Chef::Log.info("Deploy Object: #{deploy}")
   Chef::Log.info("Symlinking #{release_path}/public/assets to #{shared_path}/shared/assets")
 
   # symlink current deploy's asset folder to shared assets each deploy
